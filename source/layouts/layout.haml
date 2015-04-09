@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "ie=edge", "http-equiv" => "x-ua-compatible"}/
+    %title
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    %link{:href => "apple-touch-icon.png", :rel => "apple-touch-icon"}/
+    / Place favicon.ico in the root directory
+    %link{:href => "stylesheets/all.css", :rel => "stylesheet"}/
+  %body
+    = yield
+    %script{:src => "//ajax.googleapis.com/ajax/libs/jquery//jquery.min.js"}
+    %script{:src => "javascripts/all.js"}
