@@ -8,8 +8,7 @@
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
     %link{:href => "apple-touch-icon.png", :rel => "apple-touch-icon"}/
     / Place favicon.ico in the root directory
-    %link{:href => "stylesheets/all.css", :rel => "stylesheet"}/
+    = stylesheet_link_tag 'main'
   %body
     = yield
-    %script{:src => "//ajax.googleapis.com/ajax/libs/jquery//jquery.min.js"}
-    %script{:src => "javascripts/all.js"}
+    = javascript_include_tag 'all'
