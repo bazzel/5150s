@@ -1,0 +1,17 @@
+.frankenstein {
+  overflow: hidden;
+  position: relative;
+  background: url('../images/bg.png');
+  background-size: 100% auto;
+  &::before {
+    content: '\00a0 ';
+    position: absolute;
+    display: block;
+    border-top: 62px solid black;
+    width: 100%;
+    border-color: fade_out(yellow, 0.5);
+    @include transform(rotate(-59deg));
+    top: 44%;
+    left: 3%;
+  }
+}
