@@ -1,0 +1,10 @@
+.template {
+  width: 1024px;
+  height: 768px;
+  background: url('../images/bg.png');
+  opacity: 0.4;
+  position: absolute;
+  top: 5em;
+  left: 50%;
+  transform: translateX(-50%);
+}
