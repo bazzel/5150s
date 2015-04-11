@@ -1,0 +1,26 @@
+@mixin bumblebee {
+  $fg-color: #E5B90E;
+  $bg-color: black;
+
+  background-color: $bg-color;
+  @include lines(
+    ($fg-color, 90deg, 23%, 23.5%),
+    ($fg-color, 121deg, 47.3%, 52.3%),
+    ($fg-color, 161deg, 36.5%, 40%),
+    ($fg-color, 19deg, 48%, 52%),
+    ($fg-color, 41deg, 12%, 14%),
+    ($fg-color, 108.5deg, 57%, 59.2%),
+    ($fg-color, 63deg, 67.6%, 69.2%),
+    ($fg-color, 144deg, 81%, 87%),
+    ($fg-color, 36deg, 38.6%, 41%),
+    ($fg-color, 143deg, 55%, 55.9%),
+    ($fg-color, 129deg, 69%, 74%),
+    ($fg-color, 93deg, 77%, 80.9%),
+    ($bg-color, 129deg, 74%, 88%),
+    ($fg-color, 42deg, 74%, 76%),
+    ($fg-color, 139.5deg, 2%, 6%),
+    ($fg-color, 59deg, 18%, 21.9%),
+    ($fg-color, 20deg, 1%, 3.9%)
+  );
+}
+
