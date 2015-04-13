@@ -1,20 +1,56 @@
 $transparent: rgba(0,0,0,0);
 
-@mixin lines($array_of_lines...) {
+@mixin draw-lines(
+  $lines...
+) {
+  @include draw-layers(to-layer($lines...));
+};
+
+@mixin draw-layers(
+  $layers...
+) {
   $img: ();
 
-  @each $line in $array_of_lines {
-    $color: nth($line, 1);
-    $angle: nth($line, 2);
-    $from: nth($line, 3);
-    $to: nth($line, 4);
-
-    $img: append($img, draw-line($color, $angle, $from, $to), comma);
+  @each $layer in $layers {
+    $img: append($img, $layer, comma);
   }
+  color: $img;
   @include background-image($img);
 };
 
-@function draw-line($color, $angle, $from, $to) {
+// Maps each element of $lines to a linear-gradient
+// and returns a new array.
+// Each element consist of an array with 4 elements representing
+//  - color (e.g. red, rgba(255,0,0,0.4), etc.
+//  - angle (e.g. 53deg, 1.0708rad, etc.
+//  - from (0%..100%)
+//  - to (0%..100%)
+@function to-layer(
+  $lines...
+) {
+  $img: ();
+
+  @each $line in $lines {
+    $color:  nth($line, 1);
+    $angle:  nth($line, 2);
+    $from:   nth($line, 3);
+    $to:     nth($line, 4);
+
+    $img:    append($img, _to-line($color, $angle, $from, $to), comma);
+  }
+
+  @return $img;
+}
+
+// Returns a linear-gradient for the given arguments.
+// This value passed to a background-image will look
+// like a straight line with $color and $angle
+// starting at $from and finishing at $to.
+@function _to-line(
+  $color,
+  $angle,
+  $from,
+  $to
+) {
   @return linear-gradient($angle, $transparent $from, $color $from, $color $to, $transparent $to);
 };
-

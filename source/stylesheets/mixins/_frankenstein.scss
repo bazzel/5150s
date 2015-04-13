@@ -1,6 +1,6 @@
 @mixin frankenstein {
   background-color: red;
-  @include lines(
+  @include draw-lines(
     (white, 90deg, 23%, 23.5%),
     (black, 121deg, 47.3%, 52.3%),
     (black, 161deg, 36.5%, 40%),
